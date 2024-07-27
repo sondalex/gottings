@@ -13,7 +13,22 @@ type UnmarshalableOption interface {
 }
 
 // Example
-// LoadOptions(map[string]{})
+//
+//	 type Config struct {
+//		    Port    string
+//	 }
+//
+//	 func NewConfig() (*config, error) {
+//	     config := Config{}
+//	     err := LoadOptions(map[string]interface{}{
+//	     "Port": 1312,
+//	     }, &config)
+//
+//	     if err != nil {
+//	         return nil, err
+//	     }
+//	     return &config, nil
+//	 }
 func LoadOptions(options Options, v any) error {
 	rv := reflect.ValueOf(v)
 	if rv.Kind() != reflect.Pointer || rv.Elem().Kind() != reflect.Struct {
@@ -31,7 +46,6 @@ func LoadOptions(options Options, v any) error {
 		} else {
 			targetValue = fieldValue
 		}
-		// TODO: dereference the pointer
 		fieldName := elem.Type().Field(i).Name
 		value, ok := options[fieldName]
 		if !ok {
