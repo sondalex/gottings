@@ -440,3 +440,39 @@ func (s *NullBool) UnmarshalOption(data bool) error {
 	s.Bool = data
 	return nil
 }
+
+func (b NullBool) Value() bool {
+	return b.Bool
+}
+
+func (s NullString) Value() string {
+	return s.String
+}
+
+func (i NullInt) Value() int {
+	return i.Int
+}
+
+func (i NullInt8) Value() int8 {
+	return i.Int8
+}
+
+func (i NullInt16) Value() int16 {
+	return i.Int16
+}
+
+func (i NullInt32) Value() int32 {
+	return i.Int32
+}
+
+func (i NullInt64) Value() int64 {
+	return i.Int64
+}
+
+func (f NullFloat32) Value() float32 {
+	return f.Float32
+}
+
+func (f NullFloat64) Value() float64 {
+	return f.Float64
+}

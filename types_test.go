@@ -431,3 +431,174 @@ func TestNullBool(t *testing.T) {
 		}
 	})
 }
+
+func TestNullBoolValue(t *testing.T) {
+	tests := []struct {
+		name string
+		nb   NullBool
+		want bool
+	}{
+		{"true", NullBool{Bool: true}, true},
+		{"false", NullBool{Bool: false}, false},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := tt.nb.Value(); got != tt.want {
+				t.Errorf("NullBool.Value() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestNullStringValue(t *testing.T) {
+	tests := []struct {
+		name string
+		ns   NullString
+		want string
+	}{
+		{"hello", NullString{String: "hello"}, "hello"},
+		{"empty", NullString{String: ""}, ""},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := tt.ns.Value(); got != tt.want {
+				t.Errorf("NullString.Value() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestNullIntValue(t *testing.T) {
+	tests := []struct {
+		name string
+		ni   NullInt
+		want int
+	}{
+		{"42", NullInt{Int: 42}, 42},
+		{"0", NullInt{Int: 0}, 0},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := tt.ni.Value(); got != tt.want {
+				t.Errorf("NullInt.Value() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestNullInt8Value(t *testing.T) {
+	tests := []struct {
+		name string
+		ni8  NullInt8
+		want int8
+	}{
+		{"42", NullInt8{Int8: 42}, 42},
+		{"0", NullInt8{Int8: 0}, 0},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := tt.ni8.Value(); got != tt.want {
+				t.Errorf("NullInt8.Value() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestNullInt16Value(t *testing.T) {
+	tests := []struct {
+		name string
+		ni16 NullInt16
+		want int16
+	}{
+		{"42", NullInt16{Int16: 42}, 42},
+		{"0", NullInt16{Int16: 0}, 0},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := tt.ni16.Value(); got != tt.want {
+				t.Errorf("NullInt16.Value() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestNullInt32Value(t *testing.T) {
+	tests := []struct {
+		name string
+		ni32 NullInt32
+		want int32
+	}{
+		{"42", NullInt32{Int32: 42}, 42},
+		{"0", NullInt32{Int32: 0}, 0},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := tt.ni32.Value(); got != tt.want {
+				t.Errorf("NullInt32.Value() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestNullInt64Value(t *testing.T) {
+	tests := []struct {
+		name string
+		ni64 NullInt64
+		want int64
+	}{
+		{"42", NullInt64{Int64: 42}, 42},
+		{"0", NullInt64{Int64: 0}, 0},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := tt.ni64.Value(); got != tt.want {
+				t.Errorf("NullInt64.Value() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestNullFloat32Value(t *testing.T) {
+	tests := []struct {
+		name string
+		nf32 NullFloat32
+		want float32
+	}{
+		{"3.14", NullFloat32{Float32: 3.14}, 3.14},
+		{"0", NullFloat32{Float32: 0}, 0},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := tt.nf32.Value(); got != tt.want {
+				t.Errorf("NullFloat32.Value() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestNullFloat64Value(t *testing.T) {
+	tests := []struct {
+		name string
+		nf64 NullFloat64
+		want float64
+	}{
+		{"3.14", NullFloat64{Float64: 3.14}, 3.14},
+		{"0", NullFloat64{Float64: 0}, 0},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := tt.nf64.Value(); got != tt.want {
+				t.Errorf("NullFloat64.Value() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
