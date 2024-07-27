@@ -1,6 +1,5 @@
-# gottings
+# gottings ![gottings](assets/logo.svg)
 
-[![Go](https://img.shields.io/badge/Go-%2300ADD8.svg?&logo=go&logoColor=white)](#)
 [![Go Reference](https://pkg.go.dev/badge/github.com/sondalex/gottings?status.svg)](https://pkg.go.dev/github.com/sondalex/gottings?tab=doc)
 
 **gottings** is a Go library for loading configuration data from environment variables and JSON files.
