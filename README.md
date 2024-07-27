@@ -1,4 +1,4 @@
-# gottings ![gottings](assets/logo.png)
+# gottings
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/sondalex/gottings?status.svg)](https://pkg.go.dev/github.com/sondalex/gottings?tab=doc)
 
